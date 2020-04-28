@@ -1,0 +1,3 @@
+//= partials/contactForm.js
+
+initForm();
