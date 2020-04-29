@@ -1,0 +1,40 @@
+.container {
+    width: 1144px;
+    margin: 0 auto;
+    font-family: $main-font;
+}
+
+.logo {
+    width: 142px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+
+    &__menu_link {
+        text-decoration: none;
+        color: $text-color;
+        margin-left: 29px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 48px 0;
+    align-items: end;
+    position: relative;
+
+    &__btn {
+        background-color: $brand-color;
+        color: $white-color;
+        border: none;
+        font-family: $main-font-bold;
+        font-size: 16px;
+        padding: 17px 31px;
+        border-radius: 5px;
+        margin-left: 49px;
+        cursor: pointer;
+    }
+}

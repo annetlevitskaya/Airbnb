@@ -1,1 +1,10 @@
+@import "dependencies/reset";
+@import "dependencies/variables";
+@import "dependencies/fonts";
+@import "dependencies/mixin";
+
 @import "partials/header";
+@import "partials/content";
+@import "partials/map";
+@import "partials/contactForm";
+@import "partials/select";

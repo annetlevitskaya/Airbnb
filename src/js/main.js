@@ -1,3 +1,3 @@
-//= partials/contactForm.js
+//= partials/select.js
 
-initForm();
+initSelect();
