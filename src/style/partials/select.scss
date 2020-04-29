@@ -19,7 +19,7 @@
     }
 
     &__label{
-        color: #484848;
+        color: $label-color;
         font-family: $main-font-bold;
         font-size: 12px;
         text-transform: uppercase;
@@ -29,7 +29,7 @@
     }
 
     &__value {
-        border: 1px solid #EBEBEB;
+        border: 1px solid $border-color;
         box-sizing: border-box;
         border-radius: 4px;
         padding: 14px 15px;
@@ -61,6 +61,7 @@
         padding: 15px 0;
         position: absolute;
         top: 69px;
+        z-index: 2;
         width: 100%;
     }
 

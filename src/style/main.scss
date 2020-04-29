@@ -8,3 +8,9 @@
 @import "partials/map";
 @import "partials/contactForm";
 @import "partials/select";
+
+
+.gmnoprint,
+.gm-control-active.gm-fullscreen-control {
+    display:none;
+}
