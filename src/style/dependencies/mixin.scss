@@ -1,3 +1,5 @@
+// Can't be used for inputs (input can't have before/after pseudoelements).
+// if another custom elements will appear.
 @mixin formFocus {
     content: '';
     width: 2px;
@@ -5,5 +7,5 @@
     height: 100%;
     position: absolute;
     left: 0;
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 8px 0 0 8px;
 }

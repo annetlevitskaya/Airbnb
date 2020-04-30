@@ -8,9 +8,14 @@
 @import "partials/map";
 @import "partials/contactForm";
 @import "partials/select";
+@import "partials/loader";
 
 
 .gmnoprint,
 .gm-control-active.gm-fullscreen-control {
     display:none;
 }
+
+a:hover {
+    text-decoration: underline;
+} 

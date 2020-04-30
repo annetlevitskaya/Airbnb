@@ -1,9 +1,9 @@
-.contact {
+.contact-us {
     font-family: $main-font;
     background-color: $white-color;
     width: 416px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12);
-    border-radius: 8px 8px 0px 0px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border-radius: 8px 8px 0 0;
     position: absolute;
     top: -90px;
     right: 0;
@@ -11,14 +11,28 @@
     box-sizing: border-box;
     z-index: 2;
 
+    &.fetching::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        background-color: #ffffffad;
+        top: 0;
+        left: 0;
+    }
 
     &__title {
         font-family: $main-font-bold;
         font-size: 36px;
         margin-bottom: 40px;
+        position: relative;
+        z-index: 2;
     }
 
     &__btn {
+        position: relative;
+        z-index: 2;
         width: 100%;
         padding: 17px 0;
         border-radius: 4px;
@@ -27,11 +41,23 @@
         color: $white-color;
         font-size: 16px;
         font-family: $main-font-bold;
+        height: 52px;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &[disabled] {
+            cursor: default;
+        }
     }
 }
 
 .input {
     margin-bottom: 26px;
+    position: relative;
 
     &__label {
         color: $label-color;
@@ -43,10 +69,10 @@
         letter-spacing: 0.08em;
     }
 
-    &__area {
+    &__element {
         width: 100%;
         box-sizing: border-box;
-        border: 1px solid #EBEBEB;
+        border: 1px solid $border-color;
         border-radius: 4px;
         padding: 13px 15px;
         cursor: pointer;
@@ -59,6 +85,27 @@
         &::placeholder {
             color: $placeholder-color;
         }
+
+        &:focus:not(.error) {
+            background: linear-gradient(to right, $form-focus-color 0, $form-focus-color 1.5px, white 1.5px, white);
+        }
+
+        &.error {
+            border: 1px solid $brand-color;
+        }
+        &.error + .input__error {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-family: $main-font-bold;
+            color: $brand-color;
+            font-size: 12px;
+        }
+    }
+
+    &__error {
+        display: none;
     }
 }
 
@@ -76,7 +123,7 @@
         letter-spacing: 0.08em;
     }
 
-    &__item {
+    &__element {
         width: 100%;
         box-sizing: border-box;
         padding: 11px 0 67px 17px;
@@ -85,6 +132,7 @@
         font-family: $main-font;
         outline: none;
         color: $text-color;
+        font-size: 16px;
 
         &::placeholder {
             font-family: $main-font;
@@ -92,4 +140,68 @@
             color: $placeholder-color;
         }
     }
+}
+
+.success-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white-color;
+    z-index: 3;
+    padding: 110px 50px;    
+    box-sizing: border-box;
+
+    display: none;  
+
+    &__img {
+        width: 295px;
+        margin: 0 auto;
+        display: block;
+        padding-bottom: 36px;
+    }
+
+    &__title {
+        text-align: center;
+        font-family: $main-font-bold;
+        font-size: 32px;
+        line-height: 38px;
+        padding-bottom: 25px;
+    }
+
+    &__text {
+        text-align: center;
+        display: block;
+        line-height: 22px;
+        padding-bottom: 63px;
+    }
+
+    &__btn {
+        width: 100%;
+        border: 1px solid $black-color;
+        border-radius: 4px;
+        font-size: 16px;
+        color: $text-color;
+        font-family: $main-font-bold;
+        padding: 16px 0;
+        background-color: $white-color;
+        cursor: pointer;
+    }
+}
+
+.show {
+    display: block;
+}
+
+.fetching .contact-us__send-text {
+    display: none;
+}
+
+.loader {
+    display: none;
+}
+
+.fetching .loader {
+    display: block;
 }
